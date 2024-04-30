@@ -1,2 +1,7 @@
-package com.shivam.springjwtsecurity.exception;public class UserAlreadyExists {
+package com.shivam.springjwtsecurity.exception;
+
+public class UserAlreadyExists extends RuntimeException {
+    public UserAlreadyExists(String message) {
+        super(message);
+    }
 }

@@ -1,12 +1,14 @@
-package entity;
+package com.shivam.springjwtsecurity.entity;
 
-import enums.Role;
+import com.shivam.springjwtsecurity.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.List;
 
 @Entity
 @Table(name="user")
@@ -20,7 +22,6 @@ public class User implements UserDetails {
     @Id
     @GeneratedValue
     private Long id;
-
     private String firstName;
     private String lastName;
     private String email;
@@ -30,7 +31,7 @@ public class User implements UserDetails {
     private Role role;
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
+        return List.of(new SimpleGrantedAuthority(role.name()));
     }
 
     @Override

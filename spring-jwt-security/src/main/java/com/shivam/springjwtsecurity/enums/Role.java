@@ -1,4 +1,4 @@
-package enums;
+package com.shivam.springjwtsecurity.enums;
 
 public enum Role {
     USER,
