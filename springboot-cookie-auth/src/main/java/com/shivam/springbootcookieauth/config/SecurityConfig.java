@@ -37,16 +37,11 @@ public class SecurityConfig {
     public UserDetailsService userDetailsService(){
         return new UserDetailsServiceImpl(userRepository);
     }
-
-
     private static final String[] AUTH_WHITE_LIST = {
-            "/v3/api-docs/**",
+            "/api-docs/**",
             "/swagger-ui/**",
-            "/v2/api-docs/**",
-            "/swagger-resources/**",
             "/api/v1/save",
             "/api/v1/login",
-            "/api/v1/refreshToken",
     };
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
