@@ -88,15 +88,12 @@ function App() {
   });
 
   const handleGeneratePassword = () => {
-    console.log("Generate password");
     const password = generatePassword(passwordLength, isChecked);
-    console.log(password);
     setPassword(password);
   };
 
   const handlePasswordCopy = () => {
     navigator.clipboard.writeText(password);
-    console.log("Password copied");
     toast.success("Password copied to clipboard", {
       position: "top-right",
       autoClose: 2000,

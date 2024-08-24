@@ -31,8 +31,6 @@ export const generatePassword = (
   let password = "";
   for (let i = 0; i < length; i++) {
     const randomIndex = Math.floor(Math.random() * allChars.length);
-    console.log(Math.random());
-    console.log(randomIndex);
     password += allChars[randomIndex];
   }
   return password;
